@@ -1,4 +1,4 @@
-package com.example.powerplay
+package ca.colinmarsch.powerplay
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

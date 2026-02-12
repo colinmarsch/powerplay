@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.powerplay"
+    namespace = "ca.colinmarsch.powerplay"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.powerplay"
+        applicationId = "ca.colinmarsch.powerplay"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
