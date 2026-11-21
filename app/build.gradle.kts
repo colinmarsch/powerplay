@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.compose.compiler)
@@ -8,7 +10,8 @@ plugins {
 
 android {
     namespace = "ca.colinmarsch.powerplay"
-    compileSdk = 34
+    compileSdk = 37
+    compileSdkMinor = 2
 
     defaultConfig {
         applicationId = "ca.colinmarsch.powerplay"
@@ -27,12 +30,17 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
+    kotlin {
+        compilerOptions {
+            jvmTarget = JvmTarget.JVM_17
+        }
     }
 }
 
 dependencies {
+    implementation(project(":core:models"))
+    implementation(project(":feature:teams"))
+
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.ui)
